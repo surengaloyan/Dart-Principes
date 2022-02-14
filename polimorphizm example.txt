@@ -1,0 +1,48 @@
+//----------POLIMORPHIZM---------------------
+
+import 'dart:math';
+
+//-----the parent class-----
+class Figure {
+  String _color = '';
+  num _x = 0;
+  num _y = 0;
+    
+  set setColor(String value) => _color = value;
+  set setX(num value) => _x = value;
+  set setY(num value) => _y = value;
+}
+
+//-----the class of the rook-------
+class Rook extends Figure{
+  void move(){
+    print('Rook horizontal & vertical move');
+  }
+}
+
+//-----the class of the boshop-----
+class Bishop extends Figure{
+  void move(){
+    print('Bishop diagonal move');
+  }
+}
+
+//-----the class of the queen------
+class Queen extends Figure{
+  void move(){
+    print('Queen horizontal & vertical & diagonal move');
+  }
+}
+
+void main(){
+  var rand = Random();
+  var figuresList = [Queen(), Rook(), Bishop()];
+  
+  for(var figureObject in figuresList){
+    figureObject.setColor('white');
+    figureObject.setX(rand.nextInt(7) + 1);
+    figureObject.setY(rand.nextInt(7) + 1);
+    
+    figureObject.move();
+  }
+}
