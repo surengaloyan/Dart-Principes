@@ -1,0 +1,50 @@
+// -------INHERITANCE-------
+class Figure{
+  num _x;
+  num _y;
+  
+  set setX(num val) => _x = val;
+  set setY(num val) => _y = val;
+  
+  num get getX => _x;
+  num get getY => _y;
+}
+
+class HorizontalMoving{
+  void horizontalMove() => {};
+} 
+
+class VerticalMoving{
+  void verticalMove() => {};
+} 
+
+class DiagonalMoving{
+  void diagonalMove() => {};
+} 
+
+class Bishop implements DiagonalMoving{
+  void diagonalMove() => print('Move diagonal');
+} 
+
+class Rook implements HorizontalMoving, VerticalMoving{
+  void verticalMove() => print('Move vertical');
+  void horizontalMove() => print('Move horizontal');
+} 
+
+class Queen implements HorizontalMoving, VerticalMoving, DiagonalMoving{
+  void verticalMove() => print('Move vertical');
+  void horizontalMove() => print('Move horizontal');
+  void diagonalMove() => print('Move diagonal');
+}
+
+void main(){
+  var figuresList = [Bishop(), Rook(), Queen()];
+  
+  figuresList[2].setX(1);
+  figuresList[2].setY(4);
+  
+  print(figuresList[2].getX());
+  print(figuresList[2].getY());
+  
+  print(figuresList[2].diagonalMove());
+}
