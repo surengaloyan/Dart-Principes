@@ -1,15 +1,4 @@
 // -------INHERITANCE-------
-class Figure{
-  num _x;
-  num _y;
-  
-  set setX(num val) => _x = val;
-  set setY(num val) => _y = val;
-  
-  num get getX => _x;
-  num get getY => _y;
-}
-
 class HorizontalMoving{
   void horizontalMove() => {};
 } 
@@ -39,12 +28,6 @@ class Queen implements HorizontalMoving, VerticalMoving, DiagonalMoving{
 
 void main(){
   var figuresList = [Bishop(), Rook(), Queen()];
-  
-  figuresList[2].setX(1);
-  figuresList[2].setY(4);
-  
-  print(figuresList[2].getX());
-  print(figuresList[2].getY());
   
   print(figuresList[2].diagonalMove());
 }
