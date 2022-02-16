@@ -27,7 +27,7 @@ class Queen implements HorizontalMoving, VerticalMoving, DiagonalMoving{
 }
 
 void main(){
-  var figuresList = [Bishop(), Rook(), Queen()];
+  var queen =  Queen();
   
-  print(figuresList[2].diagonalMove());
+  queen.diagonalMove();
 }
