@@ -9,9 +9,12 @@ class Figure {
   num _x = 0;
   num _y = 0;
     
-  set setColor(String value) => _color = value;
+  set color(String value) => _color = value;
   set setX(num value) => _x = value;
   set setY(num value) => _y = value;
+
+  void move() {}
+
 }
 
 //-----the class of the rook-------
@@ -41,10 +44,10 @@ void main(){
   
   for(var figureObject in figuresList){
     //---set random color---
-    figureObject.setColor(rand.nextBool() == true ? 'white' : 'black');
+    figureObject.color = rand.nextBool() == true ? 'white' : 'black';
     //---set random coordinates---
-    figureObject.setX(rand.nextInt(7) + 1);
-    figureObject.setY(rand.nextInt(7) + 1);
+    figureObject.setX = rand.nextInt(7) + 1;
+    figureObject.setY = rand.nextInt(7) + 1;
     
     //---move the figure---
     figureObject.move();
